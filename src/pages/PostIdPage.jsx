@@ -33,13 +33,13 @@ const PostIdPage = () =>{
                     :<div>{post.id}.{post.title}</div>
                 }            
                 <h1>
-                    Комментирии
+                    Комментарии
                 </h1>
                 {isComLoading
                     ? <Loader />
                     : <div>
                         {comments.map(comm=>
-                            <div style={{marginTop:15}}>
+                            <div key={comm.id} style={{marginTop:15}}>
                                 <h5>{comm.email}</h5>
                                 <div>{comm.body}</div>
                             </div>
