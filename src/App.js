@@ -1,30 +1,19 @@
 import React from 'react'; 
 import ReactDOM from "react-dom";
 import './styles/App.css'
-import {
-  Switch,
-  Route,
-  BrowserRouter
-} from "react-router-dom";
+import {BrowserRouter, Route, Routes, Link, Redirect} from 'react-router-dom';
 import About from "./pages/About";
+import MyNavBar from "./components/UI/NavBar/MyNavBar";
 import Posts from "./pages/Posts";
+import NotFound from "./pages/NotFound";
+import MainLayout from "./pages/MainLayout";
+import AppRouter from "./components/AppRouter"
+
+
 
 function App(){
-  return (
-    <div>
-      <BrowserRouter>
-        <div className='navbar'>
-          <div className='navbar__links'>
-            <a href="/about">О сайте</a>
-            <a href="/posts">Посты</a>
-          </div>
-        </div>
-        <Route path="/about">
-          <About />
-          <Posts />
-        </Route>
-      </BrowserRouter>
-    </div>
+  return (   
+      <AppRouter />     
   );
 };
 
